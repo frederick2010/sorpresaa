@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Michelle ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #fff;
+      background:
+        radial-gradient(circle at top, #6d174e 0%, #260d35 42%, #10051d 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 105, 180, .18), transparent 25%),
+        radial-gradient(circle at 80% 10%, rgba(255, 215, 100, .14), transparent 22%),
+        radial-gradient(circle at 50% 90%, rgba(150, 80, 255, .15), transparent 28%);
+      pointer-events: none;
+    }
+
+    header {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #ffe89a;
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      text-shadow:
+        0 0 8px #fff,
+        0 0 20px #ff75b8,
+        0 0 40px #ffd45c;
+      animation: titleGlow 2s ease-in-out infinite alternate;
+    }
+
+    header p {
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: #ffd8eb;
+    }
+
+    section {
+      width: min(1100px, 92%);
+      margin: 70px auto;
+    }
+
+    .card,
+    .music-card,
+    .verses-card,
+    .game-card {
+      padding: 30px;
+      border: 1px solid rgba(255, 220, 150, .5);
+      border-radius: 25px;
+      background: rgba(55, 12, 54, .78);
+      box-shadow:
+        0 0 18px rgba(255, 105, 180, .24),
+        inset 0 0 25px rgba(255, 215, 100, .05);
+      backdrop-filter: blur(8px);
+    }
+
+    h2 {
+      color: #ffe99a;
+      text-align: center;
+      text-shadow: 0 0 12px rgba(255, 215, 100, .7);
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .gold,
+    .final {
+      color: #ffe58a;
+      font-weight: bold;
+      text-shadow: 0 0 10px #ff9fc4;
+    }
+
+    .reasons,
+    .coupons,
+    .game-buttons,
+    .music-buttons,
+    .question-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .reason {
+      flex: 1 1 210px;
+      padding: 18px;
+      border-radius: 18px;
+      text-align: center;
+      color: #ffe8f2;
+      background: rgba(255, 105, 180, .12);
+      border: 1px solid rgba(255, 210, 230, .35);
+    }
+
+    .reason span {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 2rem;
+    }
+
+    button {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid #ffd76b;
+      border-radius: 999px;
+      padding: 13px 20px;
+      color: #3b1238;
+      background: linear-gradient(135deg, #ffe99a, #ff9fc4);
+      font-weight: bold;
+      transition: .25s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.04);
+      filter: brightness(1.15);
+      box-shadow:
+        0 0 10px white,
+        0 0 22px #ff74ad,
+        0 0 35px #ffd45c;
+    }
+
+    button:active {
+      transform: scale(.94);
+    }
+
+    button::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(110deg, transparent, rgba(255,255,255,.8), transparent);
+      transform: skewX(-20deg);
+      transition: left .6s ease;
+    }
+
+    button:hover::after {
+      left: 140%;
+    }
+
+    .coupon-message,
+    .game-message {
+      min-height: 30px;
+      margin-top: 24px;
+      color: #ffe99a;
+      text-align: center;
+      font-size: 1.15rem;
+    }
+
+    .music-player {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    iframe {
+      width: min(100%, 560px);
+      height: 315px;
+      border: 0;
+      border-radius: 18px;
+    }
+
+    #verseBox {
+      margin: 22px auto;
+      max-width: 700px;
+      padding: 20px;
+      border-left: 4px solid #ffe27a;
+      background: rgba(255, 255, 255, .08);
+      text-align: center;
+    }
+
+    .game-board {
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 22px;
+      padding: 18px;
+      border: 1px dashed #ffd45c;
+      border-radius: 18px;
+      color: #ffddec;
+      text-align: center;
+    }
+
+    footer {
+      padding: 55px 20px;
+      text-align: center;
+    }
+
+    @keyframes titleGlow {
+      from {
+        filter: brightness(1);
+      }
+      to {
+        filter: brightness(1.35);
+      }
+    }
+
+    /* Puntos brillantes */
+    .magic-dot {
+      position: fixed;
+      z-index: 9999;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow:
+        0 0 5px #fff,
+        0 0 13px #ffd45c,
+        0 0 25px #ff9fc4;
+      animation: dotFloat 3.5s ease-out forwards;
+    }
+
+    @keyframes dotFloat {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0);
+      }
+      20% {
+        opacity: 1;
+        transform: translateY(0) scale(1.4);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-120px) scale(.2);
+      }
+    }
+
+    /* Corazones */
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      z-index: 9998;
+      pointer-events: none;
+      color: #ff5c9d;
+      text-shadow:
+        0 0 5px #fff,
+        0 0 13px #ff6fae,
+        0 0 25px #ffb6d5;
+      animation: heartFloat 7s linear forwards;
+    }
+
+    @keyframes heartFloat {
+      0% {
+        opacity: 0;
+        transform: translateY(0) scale(.5) rotate(0);
+      }
+      10% {
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-50vh) scale(1.2) rotate(15deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-115vh) scale(.8) rotate(-20deg);
+      }
+    }
+
+    /* Destellos */
+    .sparkle {
+      position: fixed;
+      z-index: 10000;
+      pointer-events: none;
+      color: #fff4a3;
+      text-shadow:
+        0 0 5px #fff,
+        0 0 13px #ffe36e,
+        0 0 25px #ff9fc4;
+      animation: sparkleAnimation 1.5s ease-out forwards;
+    }
+
+    @keyframes sparkleAnimation {
+      0% {
+        opacity: 0;
+        transform: scale(0) rotate(0);
+      }
+      30% {
+        opacity: 1;
+        transform: scale(1.5) rotate(90deg);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0) rotate(180deg);
+      }
+    }
+
+    .magic-star {
+      position: fixed;
+      z-index: 0;
+      pointer-events: none;
+      color: rgba(255, 237, 143, .8);
+      text-shadow: 0 0 10px #ffd45c;
+      animation: starTwinkle 2.5s ease-in-out infinite;
+    }
+
+    @keyframes starTwinkle {
+      0%, 100% {
+        opacity: .15;
+        transform: scale(.7);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.4);
+      }
+    }
+
+    .magic-message {
+      animation: messageGlow 1.4s ease-in-out infinite alternate;
+    }
+
+    @keyframes messageGlow {
+      from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #ffb7d5;
+      }
+      to {
+        text-shadow: 0 0 8px #fff, 0 0 20px #ffd45c, 0 0 35px #ff74ad;
+      }
+    }
+
+    .celebration-flash {
+      position: fixed;
+      inset: 0;
+      z-index: 9997;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(255,255,255,.5), transparent 60%);
+      animation: flashAnimation 1.3s ease-out forwards;
+    }
+
+    @keyframes flashAnimation {
+      0% {
+        opacity: 0;
+      }
+      25% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .piece-appeared {
+      display: inline-block;
+      margin: 8px;
+      font-size: 36px;
+      animation: pieceAnimation .7s ease;
+      filter: drop-shadow(0 0 8px #ffe36e);
+    }
+
+    @keyframes pieceAnimation {
+      0% {
+        opacity: 0;
+        transform: scale(0) rotate(-25deg);
+      }
+      70% {
+        opacity: 1;
+        transform: scale(1.3) rotate(10deg);
+      }
+      100% {
+        transform: scale(1) rotate(0);
+      }
+    }
+
+    .completed-card {
+      animation: completedCard 1.2s ease;
+      box-shadow:
+        0 0 12px #fff,
+        0 0 25px #ffd45c,
+        0 0 45px rgba(255,105,180,.8);
+    }
+
+    @keyframes completedCard {
+      0% {
+        transform: scale(.9);
+      }
+      60% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <h1>Para Michelle ❤️</h1>
+      <p>Una pequeña sorpresa hecha con todo mi amor</p>
+    </div>
+  </header>
+
+  <section id="carta">
+    <div class="card letter">
+      <h2>Para la mujer que amo</h2>
+
+      <p>
+        Michelle, quiero que sepas que me encanta la manera en la que sonríes,
+        la forma en la que me platicas y cada momento en el que compartes
+        un poquito de tu vida conmigo.
+      </p>
+
+      <p>
+        Valoro muchísimo cada segundo de atención que me das. También me encantan
+        tus consejos, porque sé que vienen de alguien que me ama y que quiere
+        verme bien. Gracias por estar para mí y por hacerme sentir tan especial.
+      </p>
+
+      <p>
+        Quiero pedirte perdón si he hecho cosas que te han molestado. Sé que he
+        cometido errores, pero también sé que ninguno es tan grande como para no
+        poder buscar una solución y mejorar.
+      </p>
+
+      <p>
+        Quiero pasar mi vida junto a ti. Quiero más salidas a comer tacos,
+        más visitas a los puestos de atol y tostadas que tanto te encantan,
+        más fiestas, más risas y más tiempo contigo.
+      </p>
+
+      <p>
+        Quiero paseos largos, seguir armando LEGOs, pintar todo lo que tú quieras
+        y crear recuerdos que se queden para siempre.
+      </p>
+
+      <p>
+        Quiero que siempre seas el centro de mi amor y de mi atención,
+        porque eres lo mejor de mi vida.
+      </p>
+
+      <p class="gold">
+        Te amo, quiero mejorar por nosotros y deseo seguir construyendo
+        nuestra historia.
+      </p>
+    </div>
+
+    <div class="reasons">
+      <div class="reason">
+        <span>😊</span>
+        Tu sonrisa ilumina mis días.
+      </div>
+
+      <div class="reason">
+        <span>💬</span>
+        Me encanta escucharte platicar.
+      </div>
+
+      <div class="reason">
+        <span>🧩</span>
+        Quiero construir más recuerdos contigo.
+      </div>
+
+      <div class="reason">
+        <span>👑</span>
+        Siempre serás mi reina.
+      </div>
+    </div>
+  </section>
+
+   <section>
+    <div class="card">
+      <h2>Cuponera exclusiva 🎟️</h2>
+
+      <p>
+        Cada cupón representa un momento que quiero vivir contigo.
+      </p>
+
+      <div class="coupons">
+        <button onclick="coupon('Vale por una salida a comer tacos juntos 🌮')">
+          Cupón de tacos
+        </button>
+
+        <button onclick="coupon('Vale por atol y tostadas en tu puesto favorito ❤️')">
+          Cupón de antojo
+        </button>
+
+        <button onclick="coupon('Vale por un paseo largo contigo 🚗')">
+          Cupón de paseo
+        </button>
+
+        <button onclick="coupon('Vale por una noche de fiesta y risas 💃')">
+          Cupón de fiesta
+        </button>
+
+        <button onclick="coupon('Vale por armar LEGO juntos 🧩')">
+          Cupón creativo
+        </button>
+
+        <button onclick="coupon('Vale por abrazos y atención 🤍')">
+          Cupón de amor
+        </button>
+      </div>
+
+      <p id="couponMessage" class="coupon-message"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>Rompecabezas de nuestro amor 🧩</h2>
+
+      <p>
+        Presiona las piezas en orden del 1 al 8 y termina con el corazón.
+      </p>
+
+      <div id="puzzleButtons" class="game-buttons"></div>
+
+      <p id="puzzleMessage" class="coupon-message"></p>
+    </div>
+  </section>
+
+  <section class="extras">
+    <div class="music-card">
+      <h2>🎶 Canciones para nosotros</h2>
+
+      <p>
+        Elige una canción para comenzar nuestra sorpresa, Michelle ❤️
+      </p>
+
+      <div class="music-buttons">
+        <button onclick="startMusic(0)">Canción 1 ❤️</button>
+        <button onclick="startMusic(1)">Canción 2 💖</button>
+        <button onclick="startMusic(2)">Canción 3 🎶</button>
+      </div>
+
+      <div id="musicPlayer" class="music-player"></div>
+    </div>
+
+    <div class="verses-card">
+      <h2>✨ Palabras para motivarte</h2>
+
+      <div id="verseBox">
+        <p id="verseText">
+          “Esforzaos todos vosotros los que esperáis en Jehová,
+          y tome aliento vuestro corazón.”
+        </p>
+
+        <strong id="verseReference">Salmos 31:24</strong>
+      </div>
+
+      <div class="question-buttons">
+         <button onclick="nextVerse()">
+          Leer otro versículo
+        </button>
+      </div>
+    </div>
+
+    <div class="game-card pooh-card">
+      <h2>🍯 Construyamos el bosque de miel</h2>
+
+      <p>
+        Presiona todas las piezas para completar este pequeño mundo.
+      </p>
+
+      <div class="game-buttons">
+        <button onclick="addPoohPiece('🌳', this)">Árbol</button>
+        <button onclick="addPoohPiece('🍯', this)">Miel</button>
+        <button onclick="addPoohPiece('🐝', this)">Abejita</button>
+        <button onclick="addPoohPiece('🧸', this)">Osito</button>
+      </div>
+
+      <div id="poohBoard" class="game-board">
+        <span>Construye nuestro bosque</span>
+      </div>
+
+      <p id="poohMessage" class="game-message"></p>
+    </div>
+
+    <div class="game-card dino-card">
+      <h2>🦖 Construyamos nuestro mundo jurásico</h2>
+
+      <p>
+        Completa el mundo de dinosaurios y desbloquea un mensaje especial.
+      </p>
+
+      <div class="game-buttons">
+        <button onclick="addDinoPiece('🌋', this)">Volcán</button>
+        <button onclick="addDinoPiece('🌴', this)">Palmera</button>
+        <button onclick="addDinoPiece('🦕', this)">Dinosaurio</button>
+        <button onclick="addDinoPiece('💖', this)">Corazón</button>
+      </div>
+
+      <div id="dinoBoard" class="game-board">
+        <span>Construye nuestro mundo jurásico</span>
+      </div>
+
+      <p id="dinoMessage" class="game-message"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>Una última pregunta para ti ❤️</h2>
+
+      <p>
+        Michelle, ¿quieres seguir construyendo nuestra historia conmigo?
+      </p>
+
+      <div class="question-buttons">
+        <button onclick="answerLove('Sí, quiero seguir contigo ❤️')">
+          Sí
+        </button>
+
+        <button onclick="answerLove('Claro que sí, mi amor 💖')">
+          Claro que sí
+        </button>
+
+        <button onclick="answerLove('Siempre contigo 🥰')">
+          Siempre contigo
+        </button>
+      </div>
+
+      <p id="answerMessage" class="coupon-message"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="final">Te amo, Michelle ❤️</p>
+    <p>Gracias por ser parte de mi vida.</p>
+    <p class="gold">Con amor, para siempre.</p>
+  </footer>
+   
+ <script>
+    const musicLinks = [
+      "https://www.youtube.com/watch?v=cZZ2sg_RDlw&list=RDcZZ2sg_RDlw&start_radio=1",
+      "https://www.youtube.com/watch?v=TRUet8bstRw&list=RDTRUet8bstRw&start_radio=1",
+      "https://www.youtube.com/watch?v=wugHepbGEvQ&list=RDwugHepbGEvQ&start_radio=1"
+    ];
+
+    function getYouTubeId(link) {
+      const url = new URL(link);
+      return url.searchParams.get("v");
+    }
+
+    function startMusic(index) {
+      const videoId = getYouTubeId(musicLinks[index]);
+
+      document.getElementById("musicPlayer").innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
+          title="Canción romántica"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      `;
+
+      createHeartBurst(8);
+      createDotBurst(20);
+      createSparkleBurst(15);
+    }
+
+    function createMagicDot(x, y) {
+      const dot = document.createElement("div");
+
+      dot.className = "magic-dot";
+      dot.style.left = x + "px";
+      dot.style.top = y + "px";
+
+      const colors = [
+        "#ffe98a",
+        "#ffffff",
+        "#ff9fc4",
+        "#d9b3ff",
+        "#aeeeff",
+        "#ffb6c1"
+      ];
+
+      const size = 4 + Math.random() * 9;
+
+      dot.style.background =
+        colors[Math.floor(Math.random() * colors.length)];
+
+      dot.style.width = size + "px";
+      dot.style.height = size + "px";
+
+      document.body.appendChild(dot);
+
+      setTimeout(() => {
+        dot.remove();
+      }, 3600);
+    }
+
+    function createDotBurst(amount = 25) {
+      for (let index = 0; index < amount; index++) {
+        setTimeout(() => {
+          createMagicDot(
+            Math.random() * window.innerWidth,
+            Math.random() * window.innerHeight
+          );
+        }, index * 45);
+      }
+    }
+
+    function createSparkle(x, y) {
+      const sparkle = document.createElement("div");
+
+      sparkle.className = "sparkle";
+
+      const types = ["✦", "✧", "✶", "✷", "✨", "⋆"];
+
+      sparkle.textContent =
+        types[Math.floor(Math.random() * types.length)];
+
+      sparkle.style.left = x + "px";
+      sparkle.style.top = y + "px";
+      sparkle.style.fontSize = 12 + Math.random() * 24 + "px";
+
+      document.body.appendChild(sparkle);
+
+      setTimeout(() => {
+        sparkle.remove();
+      }, 1600);
+    }
+
+    function createSparkleBurst(amount = 25) {
+      for (let index = 0; index < amount; index++) {
+        setTimeout(() => {
+          createSparkle(
+            Math.random() * window.innerWidth,
+            Math.random() * window.innerHeight
+          );
+        }, index * 45);
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+
+      const heartTypes = [
+        "♥",
+        "❤",
+        "💕",
+        "💖",
+        "💗",
+        "💘"
+      ];
+
+      heart.className = "heart";
+      heart.textContent =
+        heartTypes[Math.floor(Math.random() * heartTypes.length)];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = 16 + Math.random() * 26 + "px";
+      heart.style.animationDuration = 5 + Math.random() * 5 + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 10500);
+    }
+
+    function createHeartBurst(amount = 15) {
+      for (let index = 0; index < amount; index++) {
+        setTimeout(() => {
+          createHeart();
+        }, index * 90);
+      }
+    }
+
+    function celebrate(message, messageId, cardSelector) {
+      const messageElement = document.getElementById(messageId);
+
+      if (messageElement) {
+        messageElement.textContent = message;
+        messageElement.classList.add("magic-message");
+      }
+
+      if (cardSelector) {
+        const card = document.querySelector(cardSelector);
+
+        if (card) {
+          card.classList.add("completed-card");
+        }
+      }
+
+      const flash = document.createElement("div");
+
+      flash.className = "celebration-flash";
+      document.body.appendChild(flash);
+
+      createHeartBurst(30);
+      createDotBurst(50);
+      createSparkleBurst(40);
+
+      setTimeout(() => {
+        flash.remove();
+      }, 1400);
+    }
+
+    function coupon(message) {
+      const messageElement =
+        document.getElementById("couponMessage");
+
+      messageElement.textContent = message;
+      messageElement.classList.add("magic-message");
+
+      createHeartBurst(8);
+      createDotBurst(20);
+      createSparkleBurst(12);
+    }
+
+    const verses = [
+      {
+        text: "Esforzaos todos vosotros los que esperáis en Jehová, y tome aliento vuestro corazón.",
+        reference: "Salmos 31:24"
+      },
+      {
+        text: "Todo lo puedo en Cristo que me fortalece.",
+        reference: "Filipenses 4:13"
+      },
+      {
+        text: "Este es el día que hizo Jehová; nos gozaremos y alegraremos en él.",
+        reference: "Salmos 118:24"
+      },
+      {
+        text: "El amor es sufrido, es benigno; el amor no tiene envidia.",
+        reference: "1 Corintios 13:4"
+      }
+    ];
+
+    let verseIndex = 0;
+
+    function nextVerse() {
+      verseIndex = (verseIndex + 1) % verses.length;
+
+      document.getElementById("verseText").textContent =
+        "“" + verses[verseIndex].text + "”";
+
+      document.getElementById("verseReference").textContent =
+        verses[verseIndex].reference;
+
+      createHeartBurst(5);
+      createDotBurst(15);
+      createSparkleBurst(10);
+    }
+
+    let poohPieces = 0;
+
+    function addPoohPiece(piece, button) {
+      const board = document.getElementById("poohBoard");
+
+      if (poohPieces === 0) {
+        board.innerHTML = "";
+      }
+
+      const pieceElement = document.createElement("span");
+
+      pieceElement.textContent = piece;
+      pieceElement.className = "piece-appeared";
+
+      board.appendChild(pieceElement);
+
+      button.disabled = true;
+      button.style.opacity = "0.5";
+
+      poohPieces++;
+
+      createDotBurst(10);
+      createSparkleBurst(6);
+
+      if (poohPieces === 4) {
+        celebrate(
+          "¡Nuestro bosque quedó completo! Igual que nuestro amor 🍯❤️",
+          "poohMessage",
+          ".pooh-card"
+        );
+      }
+    }
+
+    let dinoPieces = 0;
+
+    function addDinoPiece(piece, button) {
+      const board = document.getElementById("dinoBoard");
+
+      if (dinoPieces === 0) {
+        board.innerHTML = "";
+      }
+
+      const pieceElement = document.createElement("span");
+
+      pieceElement.textContent = piece;
+      pieceElement.className = "piece-appeared";
+
+      board.appendChild(pieceElement);
+
+      button.disabled = true;
+      button.style.opacity = "0.5";
+
+      dinoPieces++;
+
+      createDotBurst(10);
+      createSparkleBurst(6);
+
+      if (dinoPieces === 4) {
+        celebrate(
+          "¡Mundo jurásico completo! Nuestro amor es prehistórico y eterno 🦖❤️",
+          "dinoMessage",
+          ".dino-card"
+        );
+      }
+    }
+
+    function answerLove(message) {
+      const answerMessage =
+        document.getElementById("answerMessage");
+
+      answerMessage.textContent = message;
+      answerMessage.classList.add("magic-message");
+
+      createHeartBurst(35);
+      createDotBurst(60);
+      createSparkleBurst(45);
+
+      const flash = document.createElement("div");
+
+      flash.className = "celebration-flash";
+      document.body.appendChild(flash);
+
+      setTimeout(() => {
+        flash.remove();
+      }, 1400);
+    }
+
+    const puzzleButtons =
+      document.getElementById("puzzleButtons");
+
+    let puzzleNext = 1;
+
+    for (let number = 1; number <= 8; number++) {
+      const button = document.createElement("button");
+
+      button.textContent = "Pieza " + number;
+
+      button.onclick = function () {
+        if (number === puzzleNext) {
+          button.textContent = "✓ " + number;
+          button.disabled = true;
+          button.style.opacity = "0.5";
+
+          puzzleNext++;
+
+          createDotBurst(8);
+          createSparkleBurst(5);
+
+          if (puzzleNext === 9) {
+            celebrate(
+              "¡Rompecabezas terminado! Nuestro amor siempre encaja ❤️",
+              "puzzleMessage",
+              ".card"
+            );
+          }
+        } else {
+          const message =
+            document.getElementById("puzzleMessage");
+
+          message.textContent =
+            "Busca la pieza número " + puzzleNext + " primero.";
+
+          message.classList.add("magic-message");
+
+          createSparkleBurst(8);
+        }
+      };
+
+      puzzleButtons.appendChild(button);
+    }
+
+    function createMagicStars() {
+      for (let index = 0; index < 35; index++) {
+        const star = document.createElement("div");
+
+        star.className = "magic-star";
+        star.textContent = "✦";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.fontSize = 8 + Math.random() * 14 + "px";
+        star.style.animationDelay = Math.random() * 3 + "s";
+
+        document.body.appendChild(star);
+      }
+    }x
+
+    document.addEventListener("click", function (event) {
+      const button = event.target.closest("button");
+
+      if (!button) {
+        return;
+      }
+
+      const rect = button.getBoundingClientRect();
+
+      for (let index = 0; index < 10; index++) {
+        setTimeout(() => {
+          createSparkle(
+            rect.left + Math.random() * rect.width,
+            rect.top + Math.random() * rect.height
+          );
+
+          createMagicDot(
+            rect.left + Math.random() * rect.width,
+            rect.top + Math.random() * rect.height
+          );
+        }, index * 65);
+      }
+    });
+
+    createMagicStars();
+
+    setInterval(() => {
+      createMagicDot(
+        Math.random() * window.innerWidth,
+        window.innerHeight - Math.random() * 180
+      );
+    }, 450);
+
+    setInterval(() => {
+      createHeart();
+    }, 1800);
+  </script>
+
+</body>
+</html>
+
+
+
+    
